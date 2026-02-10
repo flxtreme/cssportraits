@@ -27,6 +27,7 @@ Create a simple CSS portrait by using an image as the background, converting it 
 - If `# Loop` is present, duplicate the `# Message` text `N` times.
 - Use the full `# Message` text as-is, even if it is duplicated.
 - Use the value under `# Name` for the label; otherwise use the subject name.
+- Set the HTML `<title>` to `{Name} Portrait` using the same `# Name` value or fallback.
 - Do not include a QR code in the HTML at all; `qr.png` is a standalone file.
 
 ## Implementation Notes

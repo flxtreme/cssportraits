@@ -10,7 +10,7 @@ import qrcode
 ROOT = Path(__file__).resolve().parent
 FILES_DIR = ROOT / "files"
 PORTRAITS_DIR = ROOT / "portraits"
-URL_TEMPLATE = "https://flxtreme.github.io/cssportraits/{subject}/index.html"
+URL_TEMPLATE = "https://flxtreme.github.io/cssportraits/portraits/{subject}/index.html"
 
 
 def generate_qr(url: str, output_path: Path) -> None:

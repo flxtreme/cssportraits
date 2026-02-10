@@ -28,11 +28,12 @@ This workspace is for generating CSS-only portraits with an accompanying QR code
   2. If `# Loop` is present, duplicate the `# Message` text `N` times.
   3. Use the full `# Message` text as-is, including any repeated/duplicated content.
   4. Use the value under `# Name` for the name label. If missing, fall back to the subject folder name.
-  5. Produce a self-contained `index.html` with embedded CSS and a download button for `postcard.png`.
-  6. Copy `files/<subject>/image.png` into `portraits/<subject>/image.png`.
-  7. Always run `genearateqr.py` to create `portraits/<subject>/qr.png` that points to the portrait URL (do not prompt).
-  8. Always run `generatepostcard.py` to create `portraits/<subject>/postcard.png` from the postcard element (do not prompt).
-  9. Do not include the QR code anywhere in the HTML output; it should not appear on the page.
+  5. Set the HTML `<title>` to `{Name} Portrait`, using the `# Name` value or the subject folder name.
+  6. Produce a self-contained `index.html` with embedded CSS and a download button for `postcard.png`.
+  7. Copy `files/<subject>/image.png` into `portraits/<subject>/image.png`.
+  8. Always run `genearateqr.py` to create `portraits/<subject>/qr.png` that points to the portrait URL (do not prompt).
+  9. Always run `generatepostcard.py` to create `portraits/<subject>/postcard.png` from the postcard element (do not prompt).
+  10. Do not include the QR code anywhere in the HTML output; it should not appear on the page.
 
 ## Prompt Template
 Use this as the prompt for each subject:
@@ -52,6 +53,7 @@ Requirements:
 - If `# Loop` is present, duplicate the `# Message` text `N` times.
 - Use the full `# Message` text as-is, including any repeated content.
 - Use `# Name` from `message.md` for the label, or fall back to the subject name.
+- Set the HTML `<title>` to `{Name} Portrait` using the same `# Name` value or fallback.
 - Do not place a QR in the HTML at all.
 
 Output only the full HTML for index.html.
