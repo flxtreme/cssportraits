@@ -17,7 +17,7 @@ This workspace is for generating CSS-only portraits with an accompanying QR code
 - Generate `portraits/<subject>/index.html`.
 - Each output folder must include 4 files:
   - `index.html` with a download button for `postcard.png`.
-  - `image.png` copied from `files/<subject>/image.png`.
+  - `image.*` (PNG, JPEG, JPG, or other format) copied from `files/<subject>/image.*`.
   - `postcard.png` (a rendered image of the postcard).
   - `qr.png` that links to the generated portrait page (generate with `genearateqr.py`).
 
@@ -36,7 +36,7 @@ This workspace is for generating CSS-only portraits with an accompanying QR code
   6. Use the value under `# Name` for the name label. If missing, fall back to the subject folder name.
   7. Set the HTML `<title>` to `{Name} Portrait`, using the `# Name` value or the subject folder name.
   8. Produce a self-contained `index.html` with embedded CSS and a download button for `postcard.png`.
-  9. Copy `files/<subject>/image.png` into `portraits/<subject>/image.png`.
+  9. Copy the source image file (PNG, JPEG, JPG, or other format) from `files/<subject>/` into `portraits/<subject>/` with the same filename and extension.
   10. Always run `genearateqr.py` to create `portraits/<subject>/qr.png` that points to the portrait URL (do not prompt).
   11. Always run `generatepostcard.py` to create `portraits/<subject>/postcard.png` from the postcard element (do not prompt).
   12. Do not include the QR code anywhere in the HTML output; it should not appear on the page.

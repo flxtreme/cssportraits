@@ -11,11 +11,11 @@ Create a simple CSS portrait by using an image as the background, converting it 
 	- Optional `# Long Message` heading, followed by a longer letter/poem to show in the postcard body.
 	- Optional `# Loop` heading, followed by `N Times` to repeat the description text.
 	- Optional `# Theme` heading, followed by a theme name that maps to `template/<theme>.html`.
-- `files/<subject>/image.png`: the source image.
+- `files/<subject>/image.*`: the source image (PNG, JPEG, JPG, or other supported format).
 
 ## Output
 - `portraits/<subject>/index.html` (self-contained HTML + CSS).
-- `portraits/<subject>/image.png` (copied from `files/<subject>/image.png`).
+- `portraits/<subject>/image.*` (copied from `files/<subject>/image.*` with same format).
 - `portraits/<subject>/postcard.png` (rendered postcard image).
 - `portraits/<subject>/qr.png` (QR code for the portrait URL).
  - Do not overwrite or update existing generated files unless explicitly requested.
