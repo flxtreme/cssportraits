@@ -9,6 +9,6 @@ Soft hands, gentle hearts<br/>
 Two souls dancing through each day<br/>
 Love in every laugh<br/>
 # Loop
-10 Times
+20 Times
 # Theme
 valentines

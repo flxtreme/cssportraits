@@ -13,7 +13,7 @@ POSTCARD_WIDTH_IN = 4
 POSTCARD_HEIGHT_IN = 6
 CSS_DPI = 96
 OUTPUT_DPI = 300
-POSTCARD_TEXT_FONT = "clamp(8px, 0.5vw, 14px)"
+POSTCARD_TEXT_FONT = "clamp(8px, 0.3vw, 14px)"
 
 
 async def save_postcard_as_png(page, html_file: Path, selector: str, output_file: Path) -> None:
