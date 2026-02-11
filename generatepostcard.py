@@ -26,7 +26,8 @@ async def save_postcard_as_png(page, html_file: Path, selector: str, output_file
         {
             "content": (
                 f".text-portrait {{ font-size: {POSTCARD_TEXT_FONT} !important; }}"
-                ".controls, .download-btn { display: none !important; }"
+                ".controls, .download-btn, .letter-toggle { display: none !important; }"
+                ".postcard, #postcard { border-radius: 0 !important; }"
             ),
         }
     )

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valentine Portrait</title>
+
+  <style>
+    @keyframes glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 25px rgba(255, 0, 80, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 45px rgba(255, 0, 80, 0.6);
+      }
+    }
+
+    @keyframes burst {
+      0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(-50%, -120px) scale(1.8);
+        opacity: 0;
+      }
+    }
+
+    @keyframes heartBeat {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      35% {
+        transform: scale(1.08);
+      }
+
+      70% {
+        transform: scale(0.96);
+      }
+    }
+  </style>
+</head>
+
+<body
+  style="margin:0;min-height:100svh;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at top,#ffdde6,#ffc0cb,#ff9eb5);font-family:'Helvetica',serif;overflow:hidden;">
+
+  <section id="postcard"
+    style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:18px;background:#fff0f5;border-radius:18px;animation:glow 4s infinite ease-in-out;">
+
+    <div id="portrait"
+      style="cursor:pointer;position:relative;width:min(84vw,420px);aspect-ratio:3/4;overflow:hidden;border-radius:14px;background:#5c1a2d;">
+
+      <a href="postcard.png" download="postcard.png" aria-label="Download postcard" class="download-btn"
+        style="position:absolute;right:12px;top:12px;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:rgba(255, 240, 246, 0.9);text-decoration:none;z-index:3;transition:opacity 240ms ease, transform 240ms ease;">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+          <path d="M12 3v10.2l3.2-3.2 1.4 1.4-5.6 5.6-5.6-5.6 1.4-1.4 3.2 3.2V3h2Z" fill="#cc3366" />
+          <path d="M5 19h14v2H5z" fill="#cc3366" />
+        </svg>
+      </a>
+
+      <div
+        style="position:absolute;inset:0;background:url('image.png') center/cover;filter:grayscale(0.4) brightness(0.6) blur(4px);">
+      </div>
+
+      <div
+        id="description"
+        style="user-select:none;position:absolute;inset:0;font-size:clamp(12px,0.6vw,18px);line-height:0.85;text-align:center;color:transparent;background:url('image.png') center/cover no-repeat;-webkit-background-clip:text;background-clip:text;filter:contrast(1.4) brightness(1.4) blur(1px);padding:4px;">
+        <!-- # Description  -->
+        gorgeus beautiful stunning handsome lovely charming elegant exquisite radiant dazzling alluring graceful enchanting mesmerizing captivating angelic divine resplendent ravishing splendid magnificent breathtaking glamorous -->
+      </div>
+
+      <div class="letter"
+        style="display:flex;align-items:center;position:absolute;inset:10px;padding:32px;border-radius:12px;background:rgba(255, 240, 246, 0.94);color:#7a1b3b;font-size:clamp(18px, 2.2vw, 26px);line-height:1.6;text-align:left;letter-spacing:0.2px;font-family:'Snell Roundhand','Brush Script MT','Lucida Handwriting','Georgia',serif;opacity:0;transform:translateY(6px);transition:opacity 200ms ease, transform 200ms ease;pointer-events:auto;z-index:2;"
+        onclick="event.stopPropagation();burstHearts(event);this.style.opacity='0';this.style.transform='translateY(6px)';var toggle=this.parentElement.querySelector('.letter-toggle');toggle.style.opacity='1';toggle.style.transform='scale(1)';var downloadBtn=this.parentElement.querySelector('.download-btn');downloadBtn.style.opacity='1';downloadBtn.style.transform='scale(1)';">
+        Dear {{name}},
+        <br /><br />
+        <!-- # Long message -->
+        Your name feels like a soft light on my day, gentle and steady, turning ordinary moments into something I want
+        to keep.
+      </div>
+
+      <div class="letter-toggle"
+        style="position:absolute;right:12px;bottom:12px;width:54px;height:54px;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#fff0f5;box-shadow:none;cursor:pointer;z-index:3;transition:opacity 240ms ease, transform 240ms ease;animation:heartBeat 1.6s ease-in-out infinite;"
+        onclick="event.stopPropagation();var letter=this.parentElement.querySelector('.letter');var isOpen=letter.style.opacity==='1';letter.style.opacity=isOpen?'0':'1';letter.style.transform=isOpen?'translateY(6px)':'translateY(0)';var downloadBtn=this.parentElement.querySelector('.download-btn');if(!isOpen){this.style.opacity='0';this.style.transform='scale(0.6)';downloadBtn.style.opacity='0';downloadBtn.style.transform='scale(0.6)';var rect=this.parentElement.getBoundingClientRect();burstHearts({clientX:rect.right-32,clientY:rect.bottom-32});}else{this.style.opacity='1';this.style.transform='scale(1)';downloadBtn.style.opacity='1';downloadBtn.style.transform='scale(1)';}">
+        <svg viewBox="0 0 80 72" width="24" height="24" aria-hidden="true" focusable="false">
+          <path
+            d="M40 69C24 55 6 41 6 25C6 13 15 4 27 4C34 4 39 7 40 12C41 7 46 4 53 4C65 4 74 13 74 25C74 41 56 55 40 69Z"
+            fill="#cc3366" />
+        </svg>
+      </div>
+
+      <div
+        style="position:absolute;inset:0;background:radial-gradient(circle,rgba(255,182,193,0.3) 0%,rgba(179,0,60,0.4) 70%,rgba(90,0,30,0.6) 100%);pointer-events:none;">
+      </div>
+
+    </div>
+    <div
+      style="user-select:none;color:#cc3366;letter-spacing:2px;display:flex;align-items:center;justify-content:center;height:clamp(24px,1.2vw,32px);font-weight:600;">
+      <!-- # Short Message -->
+      Happy Valentine’s Day ❤
+    </div>
+
+  </section>
+
+  <script>
+    const portrait = document.getElementById("portrait");
+    const descriptionText = document.getElementById("description").textContent.trim();
+    const words = descriptionText.split(/\s+/).filter(w => w.length > 0);
+
+    function createBurst(x, y, content, isWord) {
+      const element = document.createElement("div");
+      element.innerHTML = content;
+      element.style.position = "absolute";
+      element.style.left = x + "px";
+      element.style.top = y + "px";
+      element.style.fontSize = "20px";
+      element.style.pointerEvents = "none";
+      element.style.zIndex = "4";
+      element.style.animation = "burst 1s ease-out forwards";
+      if (isWord) {
+        element.style.background = "rgba(255, 240, 246, 0.95)";
+        element.style.color = "#7a1b3b";
+        element.style.padding = "6px 10px";
+        element.style.borderRadius = "8px";
+        element.style.fontWeight = "600";
+        element.style.fontSize = "16px";
+      } else {
+        element.style.color = "#ff6f9a";
+        element.style.fontWeight = "600";
+      }
+      portrait.appendChild(element);
+
+      setTimeout(() => element.remove(), 1000);
+    }
+
+    function burstHearts(e) {
+      const rect = portrait.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const isEmojiMode = Math.random() > 0.5;
+      const burstCount = isEmojiMode ? 8 : 1;
+      const delay = isEmojiMode ? 50 : 0;
+
+      for (let i = 0; i < burstCount; i++) {
+        setTimeout(() => {
+          const content = isEmojiMode ? "💖" : words[Math.floor(Math.random() * words.length)];
+          createBurst(
+            x + (Math.random() * 40 - 20),
+            y + (Math.random() * 40 - 20),
+            content,
+            !isEmojiMode
+          );
+        }, i * delay);
+      }
+    }
+
+    portrait.addEventListener("click", burstHearts);
+    portrait.addEventListener("touchstart", function (e) {
+      const touch = e.touches[0];
+      burstHearts({ clientX: touch.clientX, clientY: touch.clientY });
+    });
+  </script>
+
+</body>
+
+</html>
