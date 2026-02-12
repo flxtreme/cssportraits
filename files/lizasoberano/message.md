@@ -7,6 +7,6 @@ Happy Valentines Day!
 # Long Message (When )
 Your name feels like a soft light on my day, gentle and steady, turning ordinary moments into something I want to keep.
 # Loop
-10 Times
+20 Times
 # Theme
 valentines
